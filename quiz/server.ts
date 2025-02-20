@@ -75,9 +75,6 @@ app.get('/read/usernames', (req: UserRequest, res: Response) => {
 app.use('/read/username/:name', addMsgToRequest);
 app.get('/read/username/:name', (req: UserRequest, res: Response) => {
   let name = req.params.name;
-  console.log('name:', name);
-  // console log all users
-  console.log('users:', req.users);
   let users_with_name = req.users?.filter(
     function (user) {
       return user.username === name;
@@ -86,7 +83,7 @@ app.get('/read/username/:name', (req: UserRequest, res: Response) => {
 
   if (users_with_name?.length === 0) {
     res.send({
-      error: { message: `--${name}-- not found`, status: 404 }
+      error: { message: `${name} not found`, status: 404 }
     });
   } else {
     res.send(users_with_name);
