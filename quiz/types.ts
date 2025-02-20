@@ -1,6 +1,5 @@
 import { Request } from 'express';
 
-// define relevant types here
 /**
  * A type that represents a user object
  */

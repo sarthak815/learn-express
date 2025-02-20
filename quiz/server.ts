@@ -2,7 +2,6 @@ import  { promises as fsPromises } from 'fs';
 import path from 'path';
 import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
-import { error } from 'console';
 
 /**
  * A type that represents a user object
